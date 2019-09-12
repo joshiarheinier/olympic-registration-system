@@ -1,0 +1,46 @@
+div#profile {
+	padding: 150px;
+	background-color: #eee;
+}
+
+div#profile.excluded {
+	padding: 75px;
+}
+
+div#profile h1 {
+	font-weight: bold;
+	margin-bottom: 50px;
+}
+
+div#profile h1 u {
+	text-decoration: none;
+	border-bottom: 8px solid #495324;
+}
+
+div.card {
+	background-color: #fff;
+	padding: 15px;
+	width: 100%;
+}
+
+div.card h4 {
+	font-weight: bold;
+}
+
+div.sport-name-link {
+	font-size: 20px;
+	padding: 5px;
+	border-bottom: 1px solid #eee;
+}
+
+.btn {
+	background-color: #1a1f55;
+	border-color: #1a1f55;
+	color: #fff;
+}
+
+.btn:hover, .btn:focus {
+	background-color: #ffa31a;
+	border-color: #ffa31a;
+	color: #fff;
+}

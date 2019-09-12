@@ -1,0 +1,79 @@
+div#home {
+	background-color: #eee;
+}
+
+div#home-content-left {
+	text-align: right;
+}
+
+img#home-img {
+	width: 450px;
+}
+
+div#home-content-right {
+	padding-top: 150px;
+}
+
+div#home-content-right h1 {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-style: italic;
+	line-height: 60px;
+	text-shadow: -5px 15px 15px #444;
+}
+
+div#about {
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+div#about-content {
+	text-align: center;
+}
+
+div#about-content img {
+	width: 200px;
+	-webkit-filter: drop-shadow(5px 5px 5px #444);
+	filter: drop-shadow(5px 5px 5px #444);
+}
+
+div#countdown-content {
+	background-color: #f1cc5c;
+	width: 100%;
+	margin: 0;
+	padding-bottom: 50px;
+}
+
+div#countdown-content div {
+	text-align: center;
+}
+
+div#countdown-content h2 {
+	padding: 20px;
+	color: #1a1f55;
+	font-weight: bold;
+	text-align: center;
+}
+
+div#countdown-content h2 u {
+	text-decoration: none;
+	border-bottom: 8px solid #495324;
+}
+
+div#contact-content img {
+	width: 150px;
+	-webkit-filter: drop-shadow(5px 5px 5px #444);
+	filter: drop-shadow(5px 5px 5px #444);
+}
+
+div#countdown-content p {
+	font-size: 32px;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+div#countdown-content p#counter {
+	font-size: 48px;
+}
