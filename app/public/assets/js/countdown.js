@@ -3,22 +3,8 @@ var countDownDate = new Date("Oct 4, 2018 00:00:00").getTime();
 var type = "entry number";
 var n = new Date().getTime();
 if (countDownDate - n < 0) {
-    countDownDate = new Date("Oct 14, 2018 21:00:00").getTime();
+    countDownDate = new Date("Oct 12, 2018 00:00:00").getTime();
     type = "entry name";
-    n = new Date().getTime();
-    countDownDate1 = new Date("Oct 27, 2018 00:00:00").getTime();
-    if (countDownDate - n < 0 && countDownDate1 > n) {
-        countDownDate = new Date("Oct 29, 2018 21:00:00").getTime();
-        type = "entry name (Atletik)";
-        n = new Date().getTime();
-        countDownDate1 = new Date("Nov 3, 2018 00:00:00").getTime();
-        if (countDownDate - n < 0 && countDownDate1 > n) {
-            countDownDate = new Date("Nov 5, 2018 21:00:00").getTime();
-            type = "entry name (Renang)";
-            n = new Date().getTime();
-            countDownDate1 = new Date("Nov 3, 2018 00:00:00").getTime();
-        }
-    }
 }
 
 // Update the count down every 1 second

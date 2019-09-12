@@ -98,8 +98,8 @@ class User extends CI_Controller {
 			$this->db->join('sport', 'faculty_sport.sport_name = sport.name');
 			$this->db->join('sport_category', 'sport.category = sport_category.category');
 			$this->db->where('faculty_name', $this->session->userdata("faculty_name"));
-			$this->db->where('sport_category.start_date <=', date("Y-m-d H:i:s"));
-			$this->db->where('sport_category.end_date >=', date("Y-m-d H:i:s"));
+			// $this->db->where('sport_category.start_date <=', date("Y-m-d H:i:s"));
+			// $this->db->where('sport_category.end_date >=', date("Y-m-d H:i:s"));
 			$query = $this->db->get();
 			$category =array();
 			foreach ($query->result() as $row) {

@@ -18,8 +18,8 @@ class Entry extends CI_Controller {
 		$this->db->join('sport', 'faculty_sport.sport_name = sport.name');
 		$this->db->join('sport_category', 'sport.category = sport_category.category');
 		$this->db->where('faculty_name', $this->session->userdata("faculty_name"));
-		$this->db->where('start_date <=', date("Y-m-d H:i:s"));
-		$this->db->where('end_date >=', date("Y-m-d H:i:s"));
+		// $this->db->where('start_date <=', date("Y-m-d H:i:s"));
+		// $this->db->where('end_date >=', date("Y-m-d H:i:s"));
 		$this->db->where($type, urldecode($name));
 		$query = $this->db->get();
 		if ($query->num_rows() == 0) {
@@ -46,9 +46,6 @@ class Entry extends CI_Controller {
 	public function entry_number()
 	{
 		if ($this->is_verified()) {
-			if ("2018-10-04 00:00:00" < date("Y-m-d H:i:s") || date("Y-m-d H:i:s") < "2018-09-24 00:00:00") {
-				show_404();
-			}
 			$this->load->database();
 			$this->db->order_by('category', 'ASC');
 			$this->db->order_by('name', 'ASC');
@@ -73,9 +70,6 @@ class Entry extends CI_Controller {
 	public function number_process()
 	{
 		if ($this->is_verified()) {
-			if ("2018-10-04 00:00:00" < date("Y-m-d H:i:s") || date("Y-m-d H:i:s") < "2018-09-24 00:00:00") {
-				show_404();
-			}
 			$this->load->database();
 			$query = $this->db->get('sport');
 			$this->db->delete('faculty_sport', array(
