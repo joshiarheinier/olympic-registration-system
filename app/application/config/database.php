@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '10.200.58.163',	// Change this to your host IP if you're using Docker
-	'username' => 'root',			// to run the app, or localhost if you're running it locally
-	'password' => 'asdasdasd',
-	'database' => 'olympic_registration_schema',
+	'hostname' => getenv('HOSTNAME_IP'),	// Change this to your host IP if you're using Docker
+	'username' => getenv('DB_USER'),		// to run the app, or localhost if you're running it locally
+	'password' => getenv('DB_PASSWORD'),
+	'database' => getenv('DB_SCHEMA'),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
