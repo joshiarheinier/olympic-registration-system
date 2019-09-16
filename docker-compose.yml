@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  php:
+    build: ./app
+    ports:
+      - '8888:80'
+      
