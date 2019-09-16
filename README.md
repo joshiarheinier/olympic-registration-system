@@ -8,6 +8,19 @@ To easily check if the web app is already connected to the database, you can ope
 1. Before building the image and run the container, check the DB configuration for the app first by opening file `database.php` located in `/app/application/config`. Change the `hostname` value to your host IP. It can be found by executing `ipconfig` on terminal and find `inet` value of `en0`, or executing `ipconfig getifaddr en0` to get the IP directly. (This is necessary because Docker creates new environment for the app, and you need to connect your app that is placed in different environment with your local database.)
 2. Check the port used in `config.php` file on `$config['base_url]`, and make sure the `localhost` is using `:8888` as the `docker-compose.yml` forwards the port.
 3. Open your terminal and make sure you're on the project root (on the same level with `docker-compose.yml` file), then execute command `docker-compose up -d`.
+#### Failed to connect to DB?
+If you fail to connect (you can check it by opening the registration page and the error will show), then try to check your MySQL user table and see if user `root` has wildcard symbol (%) as the host value by executing `SELECT host, user FROM MYSQL.USER;` on MySQL command line. The result will be like this:
+```
++-----------+------------------+
+| host      | user             |
++-----------+------------------+
+| %         | root             |
+| localhost | mysql.infoschema |
+| localhost | mysql.session    |
+| localhost | mysql.sys        |
++-----------+------------------+
+```
+If your `root` does not have wildcard, or maybe `localhost` instead of %, it means that the DB won't accept connections other than local connection. Update the value by executing `UPDATE MYSQL.USER SET host='%' WHERE user='root';`, then `GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;`.
 
 ### Run App using XAMPP
 1. Check the DB configuration for the app first and change the `hostname` value to `localhost`, because you're running it on the same environment (same steps as using Docker).
